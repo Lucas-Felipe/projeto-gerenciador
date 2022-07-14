@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setWindowTitle("Gerenciador de tarefas");
 
-    //ui->lineEdit_pid->setValidator(new QIntValidator(0, 999999, this));     //rece apenas inteiros nesse range.
+    ui->lineEdit->setValidator(new QIntValidator(0, 999999, this));     //rece apenas inteiros nesse range.
 
     QStringList titulos;
     titulos << "PID" << "USER" << "STATUS" << "#CPU" << "%CPU"<<"%MEMORIA"<<"CMD";
@@ -34,13 +34,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Temporizador de atualização da tabela e gráfico
 
-    /*tempoTabela = new QTimer(this);
-    tempoGrafico = new QTimer(this);
+    tempoTabela = new QTimer(this);
+    //tempoGrafico = new QTimer(this);
     tempoTabela->start(1000);
-    tempoGrafico->start(1000);
+    //tempoGrafico->start(1000);
 
     connect(tempoTabela, SIGNAL(timeout()), this, SLOT(tempoAtualizarTabela()));
-    connect(tempoGrafico, SIGNAL(timeout()), this, SLOT(tempoAtualizarGrafico()));*/
+    //connect(tempoGrafico, SIGNAL(timeout()), this, SLOT(tempoAtualizarGrafico()));*/
 }
 
 MainWindow::~MainWindow()
@@ -90,10 +90,14 @@ void MainWindow::on_tableWidget_cellClicked(int row, int)
     QTableWidgetItem* item_pid = ui->tableWidget->item(row,0);
     //limpa e insere o PID no lineEdit
     ui->lineEdit_4->clear();
+    ui->lineEdit->clear();
+    ui->lineEdit_2->clear();
     ui->lineEdit_4->insert(item_pid->data(Qt::DisplayRole).toString());
+    ui->lineEdit->insert(item_pid->data(Qt::DisplayRole).toString());
+    ui->lineEdit_2->insert(item_pid->data(Qt::DisplayRole).toString());
 
     QTableWidgetItem* item_cpu = ui->tableWidget->item(row,3);
-    //ui->comboBox_cpu->setCurrentIndex(item_cpu->data(Qt::DisplayRole).toInt());
+    ui->label_3->setText(item_cpu->data(Qt::DisplayRole).toString());
 }
 
 void MainWindow::limparTabela()
