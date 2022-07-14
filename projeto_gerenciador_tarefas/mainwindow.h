@@ -35,11 +35,11 @@ private:
 private slots:
 
     void on_tableWidget_cellClicked(int row, int);
-    void on_pushButton_matar_clicked();
-    void on_pushButton_suspender_clicked();
-    void on_pushButton_continuar_clicked();
-    void on_pushButton_alterar_clicked();
-    void on_lineEdit_filtro_textChanged(const QString);
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
+    void on_pushButton_6_clicked();
+    void on_lineEdit_3_textChanged(const QString);
 
     void tempoAtualizarTabela();
     void tempoAtualizarGrafico();

@@ -93,7 +93,7 @@ void MainWindow::on_tableWidget_cellClicked(int row, int)
     ui->lineEdit_4->insert(item_pid->data(Qt::DisplayRole).toString());
 
     QTableWidgetItem* item_cpu = ui->tableWidget->item(row,3);
-    ui->comboBox_cpu->setCurrentIndex(item_cpu->data(Qt::DisplayRole).toInt());
+    //ui->comboBox_cpu->setCurrentIndex(item_cpu->data(Qt::DisplayRole).toInt());
 }
 
 void MainWindow::limparTabela()
@@ -102,27 +102,27 @@ void MainWindow::limparTabela()
     ui->tableWidget->setRowCount(0);
 }
 
-/*void MainWindow::on_pushButton_suspender_clicked()
+void MainWindow::on_pushButton_2_clicked()
 {
-    suspender(ui->lineEdit_pid->text().toInt());
+    suspender(ui->lineEdit->text().toInt());
     atualizarTabela();
 }
 
-void MainWindow::on_pushButton_continuar_clicked()
+void MainWindow::on_pushButton_3_clicked()
 {
-    continuar(ui->lineEdit_pid->text().toInt());
+    continuar(ui->lineEdit->text().toInt());
     atualizarTabela();
 }
 
-void MainWindow::on_pushButton_matar_clicked()
+void MainWindow::on_pushButton_clicked()
 {
-    matar(ui->lineEdit_pid->text().toInt());
+    matar(ui->lineEdit->text().toInt());
     atualizarTabela();
 }
 
-void MainWindow::on_pushButton_alterar_clicked()
+void MainWindow::on_pushButton_6_clicked()
 {
-    trocarCPU(ui->lineEdit_pid->text().toInt(), ui->comboBox_cpu->currentIndex());
+    //trocarCPU(ui->lineEdit_pid->text().toInt(), ui->comboBox_cpu->currentIndex());
     atualizarTabela();
 }
 
@@ -132,7 +132,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         qApp->quit();
 }
 
-void MainWindow::on_lineEdit_filtro_textChanged(const QString)
+void MainWindow::on_lineEdit_3_textChanged(const QString)
 {
     atualizarTabela();
 }
@@ -141,7 +141,7 @@ void MainWindow::tempoAtualizarTabela()
 {
     atualizarTabela();
 }
-*/
+
 /*============================ GRÁFICO =========================*/
 
 /*void MainWindow::tempoAtualizarGrafico()
