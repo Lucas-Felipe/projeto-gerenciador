@@ -23,6 +23,11 @@ int matar(int pid_vitima)
     return kill(pid_vitima, SIGKILL);
 }
 
+int prioridade(int pid_vitima)
+{
+
+}
+
 int numCPUs()
 {
     return sysconf(_SC_NPROCESSORS_ONLN);

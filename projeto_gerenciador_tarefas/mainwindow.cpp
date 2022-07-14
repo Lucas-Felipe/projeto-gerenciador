@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit->setValidator(new QIntValidator(0, 999999, this));     //rece apenas inteiros nesse range.
 
     QStringList titulos;
-    titulos << "PID" << "USER" << "STATUS" << "#CPU" << "%CPU"<<"%MEMORIA"<<"CMD";
+    titulos << "PID" << "Usuário" << "Status" << "Nº da CPU" << "Uso de CPU" << "Uso de memória" <<"Path";
     ui->tableWidget->setColumnCount(7);
     ui->tableWidget->setHorizontalHeaderLabels(titulos);
     ui->tableWidget->verticalHeader()->setVisible(false);
@@ -121,6 +121,12 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     matar(ui->lineEdit->text().toInt());
+    atualizarTabela();
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    prioridade(ui->lineEdit_2->text().toInt());
     atualizarTabela();
 }
 

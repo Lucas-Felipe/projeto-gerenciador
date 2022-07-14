@@ -17,6 +17,7 @@ struct dadosProcesso{
 int suspender(int pid_vitima);
 int continuar(int pid_vitima);
 int matar(int pid_vitima);
+int prioridade(int pid_vitima);
 int numCPUs();
 int trocarCPU(int pid_vitima, int core);
 QList<dadosProcesso> listarProcessos();
